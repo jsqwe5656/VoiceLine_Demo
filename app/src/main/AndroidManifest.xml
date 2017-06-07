@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="zbf.voiceline_demo"
           xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--读写权限-->
+
+    <!-- 读写权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <!--录音权限-->
+    <!-- 录音权限 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
@@ -20,6 +21,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".FileActivity">
+        </activity>
+        <activity android:name=".PlayActivity">
         </activity>
     </application>
 
