@@ -25,7 +25,7 @@ import java.io.IOException;
 public class PlayActivity extends AppCompatActivity implements Runnable
 {
     VoiceLineView voiceLineView;
-    Button play;
+    Button play,share;
     private boolean isAlive = true;
     private MediaRecorder mMediaRecorder;
     MediaPlayer mediaPlayer;
@@ -85,11 +85,11 @@ public class PlayActivity extends AppCompatActivity implements Runnable
         }
         mMediaRecorder.prepare();
     }
-
+    String myUri;
     private void mediaPlayerInit() throws IOException
     {
         Intent intent = getIntent();
-        String myUri = intent.getStringExtra("path");
+        myUri = intent.getStringExtra("path");
         Log.e("xbf", myUri);
         mediaPlayer = new MediaPlayer();
         //用于识别音频流的系统声音的音量
@@ -112,11 +112,26 @@ public class PlayActivity extends AppCompatActivity implements Runnable
             public void onClick(View view)
             {
                 mediaPlayer.start();
-                mMediaRecorder.start();
-                Thread thread = new Thread(PlayActivity.this);
-                thread.start();
+                //好像不能这么玩
+//                mMediaRecorder.start();
+//                Thread thread = new Thread(PlayActivity.this);
+//                thread.start();
             }
         });
+        share = (Button) findViewById(R.id.btn_share);
+        share.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                File file = new File(myUri);
+                Intent intent = new Intent(Intent.EXTRA_STREAM,Uri.fromFile(file));
+                intent.setAction(Intent.ACTION_SEND);
+                intent.setType("*/*");
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

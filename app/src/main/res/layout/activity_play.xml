@@ -23,13 +23,19 @@
         voiceView:rectSpace="2dp"
         voiceView:rectWidth="5dp"
         voiceView:sensibility="four"
-        voiceView:viewMode="rect"
+        voiceView:viewMode="line"
         voiceView:voiceLine="@android:color/holo_green_dark"
         />
     <Button
         android:id="@+id/btn_play"
         android:layout_gravity="center"
         android:text="开始/暂停"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_share"
+        android:layout_gravity="center"
+        android:text="分享"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
