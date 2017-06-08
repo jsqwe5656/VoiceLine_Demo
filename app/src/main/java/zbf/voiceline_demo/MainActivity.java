@@ -1,5 +1,6 @@
 package zbf.voiceline_demo;
 
+import android.content.Intent;
 import android.media.MediaRecorder;
 import android.os.Environment;
 import android.os.Handler;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements Runnable
         }
     };
 
-    Button btn_start, btn_stop;
+    Button btn_start, btn_stop,btn_jump;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -77,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements Runnable
         {
             e.printStackTrace();
         }*/
-
 
     }
 
@@ -96,9 +96,9 @@ public class MainActivity extends AppCompatActivity implements Runnable
                 try
                 {
                     Calendar calendar = Calendar.getInstance();
-                    // 8KHz录制MP3,记得要加上录音权限哦~~
-                    String time = calendar.get(Calendar.YEAR) + "" + calendar.get(Calendar.MONTH) + "" + calendar.get(Calendar.DAY_OF_MONTH);
-                    File path = new File(Environment.getExternalStorageDirectory() + "/" + time + ".mp3");
+                    // 8KHz录制MP3
+                    String time = calendar.get(Calendar.YEAR) + "" + (calendar.get(Calendar.MONTH) + 1) + "" + calendar.get(Calendar.DAY_OF_MONTH) + "" + calendar.get(Calendar.HOUR_OF_DAY) + "" + calendar.get(Calendar.MINUTE) + "" + calendar.get(Calendar.SECOND);
+                    File path = new File(Environment.getExternalStorageDirectory() + "/healforce/" + time + ".mp3");
                     recorder = new MP3Recorder(path);
                     recorder.start();
 //                    voiceInit();
@@ -120,6 +120,17 @@ public class MainActivity extends AppCompatActivity implements Runnable
                 recorder.stop();
             }
         });
+
+        btn_jump = (Button) findViewById(R.id.jump);
+        btn_jump.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                startActivity(new Intent(MainActivity.this,FileActivity.class));
+            }
+        });
+
     }
 
     /**
