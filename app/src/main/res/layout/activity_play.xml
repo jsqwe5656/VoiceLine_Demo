@@ -2,41 +2,36 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:voiceView="http://schemas.android.com/apk/res-auto"
+    xmlns:waveview="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="zbf.voiceline_demo.PlayActivity">
 
-    <com.carlos.voiceline.mylibrary.VoiceLineView
-        android:id="@+id/voicLine"
+    <com.shuyu.waveview.AudioWaveView
+        android:id="@+id/audioWave"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@android:color/white"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="0dp"
-        voiceView:fineness="three"
-        voiceView:lineSpeed="90"
-        voiceView:maxVolume="200"
-        voiceView:middleLine="@android:color/black"
-        voiceView:middleLineHeight="1dp"
-        voiceView:rectSpace="2dp"
-        voiceView:rectWidth="5dp"
-        voiceView:sensibility="four"
-        voiceView:viewMode="line"
-        voiceView:voiceLine="@android:color/holo_green_dark"
-        />
+        android:layout_height="120dp"
+        waveview:waveColor="#FAFFFFFF"/>
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
     <Button
         android:id="@+id/btn_play"
-        android:layout_gravity="center"
-        android:text="开始/暂停"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="开始/暂停"/>
+
     <Button
         android:id="@+id/btn_share"
-        android:layout_gravity="center"
-        android:text="分享"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="分享"/>
 
 </LinearLayout>

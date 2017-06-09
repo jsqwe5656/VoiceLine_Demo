@@ -38,4 +38,5 @@ dependencies {
     compile 'com.carlos.voiceline:mylibrary:1.0.6'
     compile 'com.czt.mp3recorder:library:1.0.4'
     testCompile 'junit:junit:4.12'
+    compile 'com.github.CarGuo:RecordWave:v1.1.3'
 }
