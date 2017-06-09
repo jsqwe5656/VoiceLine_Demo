@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements Runnable
                 {
                     Calendar calendar = Calendar.getInstance();
                     // 8KHz录制MP3
-                    String time = calendar.get(Calendar.YEAR) + "" + (calendar.get(Calendar.MONTH) + 1) + "" + calendar.get(Calendar.DAY_OF_MONTH) + "" + calendar.get(Calendar.HOUR_OF_DAY) + "" + calendar.get(Calendar.MINUTE) + "" + calendar.get(Calendar.SECOND);
+                    String time = calendar.get(Calendar.YEAR) + "年" + (calendar.get(Calendar.MONTH) + 1) + "月" + calendar.get(Calendar.DAY_OF_MONTH) + "日_" + calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE) + ":" + calendar.get(Calendar.SECOND);
                     File path = new File(Environment.getExternalStorageDirectory() + "/healforce/" + time + ".mp3");
                     recorder = new MP3Recorder(path);
                     recorder.start();
