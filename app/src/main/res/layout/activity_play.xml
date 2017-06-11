@@ -5,6 +5,7 @@
     xmlns:waveview="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     android:orientation="vertical"
     tools:context="zbf.voiceline_demo.PlayActivity">
 
@@ -12,7 +13,7 @@
         android:id="@+id/audioWave"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        waveview:waveColor="#FAFFFFFF"/>
+        waveview:waveColor="#F000af"/>
 
     <SeekBar
         android:id="@+id/seekBar2"
