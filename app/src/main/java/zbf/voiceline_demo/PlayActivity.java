@@ -163,7 +163,8 @@ public class PlayActivity extends AppCompatActivity implements MP3RadioStreamDel
 
         //player.setStartWaveTime(5000);
         //audioWave.setDrawBase(false);
-        audioWaveView.setBaseRecorder(player);
+        //声波变色
+//        audioWaveView.setBaseRecorder(player);
         audioWaveView.startView();
         try {
             player.play();
