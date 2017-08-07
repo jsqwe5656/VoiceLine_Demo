@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="zbf.voiceline_demo"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="zbf.voiceline_demo">
 
     <!-- 读写权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -26,6 +26,12 @@
         </activity>
         <activity android:name=".PlayActivity">
         </activity>
+
+        <service
+            android:name=".PlayService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>

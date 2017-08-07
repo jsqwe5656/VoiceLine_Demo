@@ -103,7 +103,6 @@ public class PlayActivity extends AppCompatActivity implements MP3RadioStreamDel
         //完成初始化
         mediaPlayer.prepare();
 
-
     }
 
     private void viewInit()
